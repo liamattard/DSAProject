@@ -1,6 +1,8 @@
 package models
 
-import ()
+import (
+	"strconv"
+)
 
 const (
 	W byte = 'w'
@@ -12,4 +14,8 @@ const (
 type Literal struct {
 	Symbol   byte
 	Validity bool
+}
+
+func ToString(literal Literal) string {
+	return string(literal.Symbol) + " : " + strconv.FormatBool(literal.Validity)
 }

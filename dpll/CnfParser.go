@@ -113,10 +113,6 @@ func ParseInput() [][]models.Literal {
 		fmt.Println("ERROR IN PARSING")
 		os.Exit(1)
 
-	} else {
-		fmt.Println("Expression: ")
-		fmt.Printf("%v", expression)
-		fmt.Println("")
 	}
 
 	return expression

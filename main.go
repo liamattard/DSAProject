@@ -11,8 +11,8 @@ func main() {
 	sat, proof := dpll.Dpll(input, nil)
 
 	if sat {
-		fmt.Println("SAT: ")
-		fmt.Printf("%v", proof)
+		fmt.Println("SAT")
+		dpll.PrintProof(proof)
 	} else {
 		fmt.Println("UNSAT")
 	}

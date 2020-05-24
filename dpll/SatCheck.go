@@ -2,7 +2,7 @@ package dpll
 
 import (
 	"DsaUomProject/dpll/models"
-	// "fmt"
+	"fmt"
 )
 
 // Dpll : uses the dpll algorithm to check
@@ -92,4 +92,18 @@ func Dpll(expression [][]models.Literal, proof []models.Literal) (bool, []models
 	// fmt.Printf("new Right expression :%v", negatedExpression)
 
 	return false, nil
+}
+
+// PrintProof : Uses the literal's
+// toString method to print out the
+// literal byte symbol in string
+// format and it's validity.
+func PrintProof(proof []models.Literal) {
+
+	fmt.Println("Proof: ")
+
+	for _, r := range proof {
+		fmt.Println(models.ToString(r))
+	}
+
 }
