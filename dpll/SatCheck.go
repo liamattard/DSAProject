@@ -94,16 +94,33 @@ func Dpll(expression [][]models.Literal, proof []models.Literal) (bool, []models
 	return false, nil
 }
 
-// PrintProof : Uses the literal's
-// toString method to print out the
-// literal byte symbol in string
-// format and it's validity.
-func PrintProof(proof []models.Literal) {
+func printProof(proof []models.Literal) {
 
 	fmt.Println("Proof: ")
 
 	for _, r := range proof {
 		fmt.Println(models.ToString(r))
+	}
+
+}
+
+// StartFunc : init function which calls the ParseInput
+// function, the Dpll function and the printProof
+// function in order.
+func StartFunc() {
+
+	input := ParseInput()
+	sat, proof := Dpll(input, nil)
+
+	if sat {
+
+		fmt.Println("SAT")
+		printProof(proof)
+
+	} else {
+
+		fmt.Println("UNSAT")
+
 	}
 
 }
